@@ -52,12 +52,12 @@ class CoffeeHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0C0F14),
+      backgroundColor: Color(0xFF0C0F14),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: const Icon(Icons.apps, color: Color(0xFF4E545A)),
-        actions: const [
+        leading: Icon(Icons.apps, color: Color(0xFF4E545A)),
+        actions: [
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: Icon(Icons.person, color: Color(0xFF4E545A)),
@@ -66,13 +66,13 @@ class CoffeeHomePage extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
-        backgroundColor: const Color(0xFF0C0F14),
+        backgroundColor: Color(0xFF0C0F14),
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: const Color(0xFFD17842),
-        unselectedItemColor: const Color(0xFF4E545A),
+        selectedItemColor: Color(0xFFD17842),
+        unselectedItemColor: Color(0xFF4E545A),
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        items: const [
+        items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.shopping_bag), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ''),
@@ -81,11 +81,11 @@ class CoffeeHomePage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          padding: EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               Text(
                 'Find the best coffee for you',
                 style: GoogleFonts.balsamiqSans(
@@ -94,29 +94,26 @@ class CoffeeHomePage extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 25),
+              SizedBox(height: 25),
               TextField(
-                style: const TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                   filled: true,
-                  fillColor: const Color(0xFF141921),
-                  prefixIcon: const Icon(
-                    Icons.search,
-                    color: Color(0xFF52555A),
-                  ),
+                  fillColor: Color(0xFF141921),
+                  prefixIcon: Icon(Icons.search, color: Color(0xFF52555A)),
                   hintText: 'Find your coffee...',
-                  hintStyle: const TextStyle(color: Color(0xFF52555A)),
+                  hintStyle: TextStyle(color: Color(0xFF52555A)),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
-                    borderSide: const BorderSide(color: Color(0xFF141921)),
+                    borderSide: BorderSide(color: Color(0xFF141921)),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
-                    borderSide: const BorderSide(color: Color(0xFF141921)),
+                    borderSide: BorderSide(color: Color(0xFF141921)),
                   ),
                 ),
               ),
-              const SizedBox(height: 25),
+              SizedBox(height: 25),
               SizedBox(
                 height: 30,
                 child: ListView(
@@ -124,22 +121,22 @@ class CoffeeHomePage extends StatelessWidget {
                   children: [
                     for (int i = 0; i < categories.length; i++)
                       Padding(
-                        padding: const EdgeInsets.only(right: 20.0),
+                        padding: EdgeInsets.only(right: 20.0),
                         child: Text(
                           categories[i],
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: i == 0
-                                ? const Color(0xFFD17842)
-                                : const Color(0xFF52555A),
+                                ? Color(0xFFD17842)
+                                : Color(0xFF52555A),
                           ),
                         ),
                       ),
                   ],
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               SizedBox(
                 height: 310,
                 child: ListView(
@@ -189,11 +186,11 @@ class CoffeeHomePage extends StatelessWidget {
       },
       child: Container(
         width: 170,
-        margin: const EdgeInsets.only(right: 20, bottom: 10),
-        padding: const EdgeInsets.all(12),
+        margin: EdgeInsets.only(right: 20, bottom: 10),
+        padding: EdgeInsets.all(12),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: const Color(0xFF141921),
+          color: Color(0xFF141921),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -207,39 +204,39 @@ class CoffeeHomePage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: 12),
             Text(
               name,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
                 color: Colors.white,
               ),
             ),
-            const SizedBox(height: 4),
+            SizedBox(height: 4),
             Text(
               addition,
-              style: const TextStyle(fontSize: 14, color: Color(0xFF52555A)),
+              style: TextStyle(fontSize: 14, color: Color(0xFF52555A)),
             ),
-            const Spacer(),
+            Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   "\$ ${price.toStringAsFixed(2)}",
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Color(0xFFD17842),
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.all(8),
+                  padding: EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFD17842),
+                    color: Color(0xFFD17842),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: const Icon(Icons.add, size: 16, color: Colors.white),
+                  child: Icon(Icons.add, size: 16, color: Colors.white),
                 ),
               ],
             ),

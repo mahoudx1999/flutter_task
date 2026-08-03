@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'coffee_home_page.dart';
 
 void main() {
-  runApp(const CoffeeApp());
+  runApp(CoffeeApp());
 }
 
 class CoffeeApp extends StatelessWidget {
@@ -15,10 +15,10 @@ class CoffeeApp extends StatelessWidget {
       title: 'Coffee UI Clone',
       theme: ThemeData(
         brightness: Brightness.dark,
-        scaffoldBackgroundColor: const Color(0xFF0C0F14),
-        primaryColor: const Color(0xFFD17842),
+        scaffoldBackgroundColor: Color(0xFF0C0F14),
+        primaryColor: Color(0xFFD17842),
       ),
-      home: const CoffeeHomePage(),
+      home: CoffeeHomePage(),
     );
   }
 }

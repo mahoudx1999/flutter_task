@@ -27,7 +27,7 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0C0F14),
+      backgroundColor: Color(0xFF0C0F14),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,7 +35,7 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30),
                   ),
@@ -48,7 +48,7 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
                 ),
                 SafeArea(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
+                    padding: EdgeInsets.symmetric(
                       horizontal: 20.0,
                       vertical: 10,
                     ),
@@ -57,12 +57,12 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            color: const Color(0xFF12171C),
+                            color: Color(0xFF12171C),
                             shape: BoxShape.circle,
                           ),
                           child: IconButton(
                             onPressed: () => Navigator.pop(context),
-                            icon: const Icon(
+                            icon: Icon(
                               Icons.arrow_back_ios_new,
                               color: Color(0xFF63636C),
                             ),
@@ -70,12 +70,12 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                            color: const Color(0xFF12171C),
+                            color: Color(0xFF12171C),
                             shape: BoxShape.circle,
                           ),
                           child: IconButton(
                             onPressed: () {},
-                            icon: const Icon(
+                            icon: Icon(
                               Icons.favorite,
                               color: Color(0xFF63636C),
                             ),
@@ -88,25 +88,25 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(20.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     widget.name,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
                   ),
-                  const SizedBox(height: 4),
+                  SizedBox(height: 4),
                   Text(
                     widget.addition,
-                    style: const TextStyle(fontSize: 14, color: Colors.grey),
+                    style: TextStyle(fontSize: 14, color: Colors.grey),
                   ),
-                  const SizedBox(height: 20),
-                  const Text(
+                  SizedBox(height: 20),
+                  Text(
                     'Description',
                     style: TextStyle(
                       fontSize: 14,
@@ -114,7 +114,7 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
                       color: Colors.grey,
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   Text(
                     widget.description,
                     style: TextStyle(
@@ -123,8 +123,8 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
                       height: 1.5,
                     ),
                   ),
-                  const SizedBox(height: 30),
-                  const Text(
+                  SizedBox(height: 30),
+                  Text(
                     'Size',
                     style: TextStyle(
                       fontSize: 14,
@@ -132,7 +132,7 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
                       color: Colors.grey,
                     ),
                   ),
-                  const SizedBox(height: 13),
+                  SizedBox(height: 13),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -141,13 +141,13 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
                           onTap: () => setState(() => selected = i),
                           child: Container(
                             width: 100,
-                            padding: const EdgeInsets.symmetric(vertical: 10),
+                            padding: EdgeInsets.symmetric(vertical: 10),
                             decoration: BoxDecoration(
-                              color: const Color(0xFF141921),
+                              color: Color(0xFF141921),
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
                                 color: selected == i
-                                    ? const Color(0xFFD17842)
+                                    ? Color(0xFFD17842)
                                     : Colors.transparent,
                               ),
                             ),
@@ -156,7 +156,7 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
                                 sizes[i],
                                 style: TextStyle(
                                   color: selected == i
-                                      ? const Color(0xFFD17842)
+                                      ? Color(0xFFD17842)
                                       : Colors.grey,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -166,20 +166,20 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
                         ),
                     ],
                   ),
-                  const SizedBox(height: 50),
+                  SizedBox(height: 50),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             'Price',
                             style: TextStyle(color: Colors.grey, fontSize: 12),
                           ),
                           Text(
                             '\$ ${widget.price.toStringAsFixed(2)}',
-                            style: const TextStyle(
+                            style: TextStyle(
                               color: Color(0xFFD17842),
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -190,8 +190,8 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFFD17842),
-                          padding: const EdgeInsets.symmetric(
+                          backgroundColor: Color(0xFFD17842),
+                          padding: EdgeInsets.symmetric(
                             horizontal: 80,
                             vertical: 15,
                           ),
@@ -199,7 +199,7 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
                             borderRadius: BorderRadius.circular(20),
                           ),
                         ),
-                        child: const Text(
+                        child: Text(
                           'Buy Now',
                           style: TextStyle(
                             fontSize: 16,
