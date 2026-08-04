@@ -20,19 +20,19 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
     final coffee = widget.coffee;
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0C0F14),
+      backgroundColor: Color(0xFF0C0F14),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Container(
-          margin: const EdgeInsets.all(8),
+          margin: EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: const Color(0xFF21262E),
+            color: Color(0xFF21262E),
             borderRadius: BorderRadius.circular(12),
           ),
           child: IconButton(
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_ios_new,
               color: Color(0xFF55555D),
               size: 20,
@@ -42,17 +42,13 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
         ),
         actions: [
           Container(
-            margin: const EdgeInsets.all(8),
+            margin: EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: const Color(0xFF21262E),
+              color: Color(0xFF21262E),
               borderRadius: BorderRadius.circular(12),
             ),
             child: IconButton(
-              icon: const Icon(
-                Icons.favorite,
-                color: Color(0xFF515356),
-                size: 20,
-              ),
+              icon: Icon(Icons.favorite, color: Color(0xFF515356), size: 20),
               onPressed: () {},
             ),
           ),
@@ -65,7 +61,7 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: const BorderRadius.vertical(
+                  borderRadius: BorderRadius.vertical(
                     bottom: Radius.circular(30),
                   ),
                   child: Image.asset(
@@ -84,7 +80,7 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                     child: BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 9, sigmaY: 9),
                       child: Container(
-                        padding: const EdgeInsets.all(40),
+                        padding: EdgeInsets.all(40),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
                         ),
@@ -97,16 +93,16 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                                 children: [
                                   Text(
                                     coffee.name,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 22,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  const SizedBox(height: 4),
+                                  SizedBox(height: 4),
                                   Text(
                                     coffee.addition,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       color: Colors.white70,
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
@@ -118,9 +114,9 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                             Row(
                               children: [
                                 Container(
-                                  padding: const EdgeInsets.all(10),
+                                  padding: EdgeInsets.all(10),
                                   decoration: BoxDecoration(
-                                    color: const Color(0xFF0C0F14),
+                                    color: Color(0xFF0C0F14),
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Column(
@@ -130,10 +126,10 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                                         color: Colors.orange,
                                         size: 20,
                                       ),
-                                      const SizedBox(height: 4),
+                                      SizedBox(height: 4),
                                       Text(
                                         coffee.firstIngredient,
-                                        style: const TextStyle(
+                                        style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 10,
                                         ),
@@ -141,11 +137,11 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                                     ],
                                   ),
                                 ),
-                                const SizedBox(width: 12),
+                                SizedBox(width: 12),
                                 Container(
-                                  padding: const EdgeInsets.all(10),
+                                  padding: EdgeInsets.all(10),
                                   decoration: BoxDecoration(
-                                    color: const Color(0xFF0C0F14),
+                                    color: Color(0xFF0C0F14),
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Column(
@@ -155,10 +151,10 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                                         color: Colors.orange,
                                         size: 20,
                                       ),
-                                      const SizedBox(height: 4),
+                                      SizedBox(height: 4),
                                       Text(
                                         coffee.secondIngredient,
-                                        style: const TextStyle(
+                                        style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 10,
                                         ),
@@ -176,13 +172,13 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                 ),
               ],
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     "Description",
                     style: TextStyle(
                       color: Colors.grey,
@@ -190,17 +186,17 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8),
                   Text(
                     coffee.description,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
                       fontSize: 14,
                       height: 1.5,
                     ),
                   ),
-                  const SizedBox(height: 20),
-                  const Text(
+                  SizedBox(height: 20),
+                  Text(
                     "Size",
                     style: TextStyle(
                       color: Colors.grey,
@@ -208,7 +204,7 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 12),
+                  SizedBox(height: 12),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -221,11 +217,11 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                           },
                           child: Container(
                             width: 113,
-                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            padding: EdgeInsets.symmetric(vertical: 12),
                             decoration: BoxDecoration(
                               color: selectedSize == sizes[i]
-                                  ? const Color(0xFF0C0F14)
-                                  : const Color(0xFF141921),
+                                  ? Color(0xFF0C0F14)
+                                  : Color(0xFF141921),
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
                                 color: selectedSize == sizes[i]
@@ -250,21 +246,21 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                         ),
                     ],
                   ),
-                  const SizedBox(height: 40),
+                  SizedBox(height: 40),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "Price",
                             style: TextStyle(color: Colors.grey, fontSize: 14),
                           ),
-                          const SizedBox(height: 4),
+                          SizedBox(height: 4),
                           Row(
                             children: [
-                              const Text(
+                              Text(
                                 "\$ ",
                                 style: TextStyle(
                                   color: Colors.orange,
@@ -280,7 +276,7 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                                             ? 1
                                             : 2))
                                     .toStringAsFixed(2),
-                                style: const TextStyle(
+                                style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -291,7 +287,7 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                         ],
                       ),
                       Container(
-                        padding: const EdgeInsets.symmetric(
+                        padding: EdgeInsets.symmetric(
                           horizontal: 40,
                           vertical: 15,
                         ),
@@ -299,7 +295,7 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                           color: Colors.orange,
                           borderRadius: BorderRadius.circular(15),
                         ),
-                        child: const Text(
+                        child: Text(
                           "Buy Now",
                           style: TextStyle(
                             color: Colors.white,
