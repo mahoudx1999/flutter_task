@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'model.dart';
+import 'dart:ui';
 
 class DrinkDetailsPage extends StatefulWidget {
   final Drink coffee;
@@ -78,95 +79,98 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                   bottom: 0,
                   left: 0,
                   right: 0,
-                  child: Container(
-                    padding: const EdgeInsets.all(40),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF141921).withValues(alpha: 0.75),
-                      borderRadius: const BorderRadius.vertical(
-                        top: Radius.circular(30),
-                        bottom: Radius.circular(30),
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                coffee.name,
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                coffee.addition,
-                                style: const TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 14,
-                                ),
-                              ),
-                            ],
-                          ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 9, sigmaY: 9),
+                      child: Container(
+                        padding: const EdgeInsets.all(40),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
                         ),
-                        Row(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: const Color(0xFF0C0F14),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
+                            Expanded(
                               child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    coffee.firstIngredientIcon,
-                                    color: Colors.orange,
-                                    size: 20,
+                                  Text(
+                                    coffee.name,
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                   const SizedBox(height: 4),
                                   Text(
-                                    coffee.firstIngredient,
+                                    coffee.addition,
                                     style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 10,
+                                      color: Colors.white70,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                            const SizedBox(width: 12),
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: const Color(0xFF0C0F14),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Column(
-                                children: [
-                                  Icon(
-                                    coffee.secondIngredientIcon,
-                                    color: Colors.orange,
-                                    size: 20,
+                            Row(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF0C0F14),
+                                    borderRadius: BorderRadius.circular(10),
                                   ),
-                                  const SizedBox(height: 4),
-                                  Text(
-                                    coffee.secondIngredient,
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 10,
-                                    ),
+                                  child: Column(
+                                    children: [
+                                      Icon(
+                                        coffee.firstIngredientIcon,
+                                        color: Colors.orange,
+                                        size: 20,
+                                      ),
+                                      const SizedBox(height: 4),
+                                      Text(
+                                        coffee.firstIngredient,
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 10,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
+                                ),
+                                const SizedBox(width: 12),
+                                Container(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF0C0F14),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      Icon(
+                                        coffee.secondIngredientIcon,
+                                        color: Colors.orange,
+                                        size: 20,
+                                      ),
+                                      const SizedBox(height: 4),
+                                      Text(
+                                        coffee.secondIngredient,
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 10,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
@@ -216,7 +220,7 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                             });
                           },
                           child: Container(
-                            width: 110,
+                            width: 113,
                             padding: const EdgeInsets.symmetric(vertical: 12),
                             decoration: BoxDecoration(
                               color: selectedSize == sizes[i]
@@ -269,7 +273,13 @@ class _DrinkDetailsPageState extends State<DrinkDetailsPage> {
                                 ),
                               ),
                               Text(
-                                coffee.price.toStringAsFixed(2),
+                                (coffee.price +
+                                        (selectedSize == 'S'
+                                            ? 0
+                                            : selectedSize == 'M'
+                                            ? 1
+                                            : 2))
+                                    .toStringAsFixed(2),
                                 style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 20,
