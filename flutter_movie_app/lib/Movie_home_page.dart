@@ -21,6 +21,7 @@ class _MovieHomePageState extends State<MovieHomePage> {
 
   @override
   void initState() {
+    super.initState();
     loadMovies();
   }
 
@@ -32,30 +33,40 @@ class _MovieHomePageState extends State<MovieHomePage> {
         backgroundColor: const Color(0xFF0C0F14),
         centerTitle: true,
       ),
-      body: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          var item = moviesList[index];
+      body: moviesList.isEmpty
+          ? const Center(
+              child: CircularProgressIndicator(color: Color(0xFFD17842)),
+            )
+          : ListView.builder(
+              itemCount: moviesList.length,
+              itemBuilder: (context, index) {
+                var item = moviesList[index];
 
-          String name = item['title'] ?? item['name'] ?? 'No Title';
-          String imageUrl =
-              'https://image.tmdb.org/t/p/w500' + item['poster_path'];
-          var rating = item['vote_average'];
+                String name = item['title'] ?? item['name'] ?? 'No Title';
+                String imageUrl = item['poster_path'] != null
+                    ? 'https://image.tmdb.org/t/p/w500' + item['poster_path']
+                    : '';
+                var rating = item['vote_average'];
 
-          return Card(
-            color: const Color(0xFF1E242D),
-            margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-            child: ListTile(
-              leading: Image.network(imageUrl, width: 50, fit: BoxFit.cover),
-              title: Text(
-                name,
-                style: const TextStyle(fontWeight: FontWeight.bold),
-              ),
-              subtitle: Text('Rating: $rating / 10'),
+                return Card(
+                  color: const Color(0xFF1E242D),
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 6,
+                  ),
+                  child: ListTile(
+                    leading: imageUrl.isNotEmpty
+                        ? Image.network(imageUrl, width: 50, fit: BoxFit.cover)
+                        : const Icon(Icons.movie, size: 50),
+                    title: Text(
+                      name,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Text('Rating: $rating / 10'),
+                  ),
+                );
+              },
             ),
-          );
-        },
-      ),
     );
   }
 }
