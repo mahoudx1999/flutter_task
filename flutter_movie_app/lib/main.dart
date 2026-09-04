@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'Movie_home_page.dart';
 
 void main() {
-  runApp(const Movieapp());
+  runApp(Movieapp());
 }
 
 class Movieapp extends StatelessWidget {
@@ -15,9 +15,9 @@ class Movieapp extends StatelessWidget {
       title: 'Movie app',
       theme: ThemeData(
         brightness: Brightness.dark,
-        scaffoldBackgroundColor: const Color(0xFF0C0F14),
+        scaffoldBackgroundColor: Color(0xFF0C0F14),
       ),
-      home: const MovieHomePage(),
+      home: MovieHomePage(),
     );
   }
 }
